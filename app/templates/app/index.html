@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Project Title</title>
+
+  <meta name="description" content="An AI learning path generator">
+
+  
+  <link rel="stylesheet" href="{% static 'app/asset/bootstrap-themes/demo/theme-machine/neon-glow/css/bootstrap4-neon-glow.min.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'app/asset/bootstrap-themes/demo/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'app/asset/releases/v5.6.3/css/all.css' %}" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel='stylesheet' href="{% static 'app/asset/font-hack/2.020/css/hack.min.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'app/asset/index.css' %}"/>
+  
+  
+<script type="text/javascript">isDarkTheme=true;</script>
+
+<script src="{% static 'app/asset/jquery-3.3.1.min.js' %}" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="{% static 'app/asset/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="{% static 'app/asset/bootstrap/4.3.1/js/bootstrap.min.js' %}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="{% static 'app/asset/ajax/libs/js-beautify/1.6.14/beautify-html.js' %}"></script>
+<script src="{% static 'app/asset/ajax/libs/highlight.js/9.12.0/highlight.min.js' %}"></script>
+
+<script src="{% static 'app/asset/bootstrap-themes/demo/js/ht-themes.js' %}"></script>
+<script src="{% static 'app/asset/js/analytics.js' %}"></script>
+<script src="{% static 'app/asset/js/hackerthemes.js' %}"></script>
+</head>
+
+<body class="ht-body">
+
+<div class="ht-tm-navbar navbar-dark text-white">
+  <div class="container">
+
+    <div class="ht-tm-navbar-left">
+      <a href="{% url 'app:home' %}" class="text-decoration-none text-light">
+        <span class="ht-tm-navbar-title">AI Roadmap Gen</span>
+      </a>
+      <nav class="ht-tm-nav">
+        <a href="#" class="text-decoration-none text-light">Home</a>
+        <a href="#" class="text-decoration-none text-light">Generate</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+<div class="ht-main">
+  
+<div id="ht-tm-jumbotron">
+  <div class="jumbotron bg-transparent mb-0 radius-0">
+    <div class="container">
+      <div class="ht-tm-header">
+        <div class="row">
+          <div class="col-xl-6">
+            <h1 class="display-2">AI Roadmap Generato<span class="vim-caret">r</span></h1>
+            <div class="lead mb-3 text-mono text-success">An AI Roadmap Generator</div>
+
+            <p class="mt-5 text-grey text-spacey">
+              Lorem epsum Lorem epsumLorem epsumLorem epsumLorem epsumLorem epsumLorem epsumLorem epsumLorem epsumLorem epsumLorem epsum
+            </p>
+
+            <div class="text-mono">
+              <a href="#myForm" class="btn btn-primary btn-shadow px-3 my-2 ml-0 text-left js-ht-download-link" data-type="theme" data-id="95">Try Roadmap</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<a class="ht-tm-toggle-sidenav" id="ht-tm-toggle-sidenav-external" href="#"><span class="fas fa-plus"></span></a>
+
+<div class="container ht-tm-container">
+
+  <div class="row">
+    <div class="container">
+      <div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
+        <div class="ht-tm-componentsblock">
+          {% if roadmap_title %}
+          <div class="ht-tm-element alert alert-primary alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Great!</strong> Your {{ roadmap_title }} roadmap is generated
+          </div>
+          {% endif %}
+
+          <!-- <div class="ht-tm-cat ht-tm-btn-replaceable">
+            <a id="cards" class="ht-anchor" href="https://hackerthemes.com/">Cards</a>
+
+            <h5 class="ht-tm-cat-title">Cards</h5>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ht-tm-codeblock">
+                  <div class="ht-tm-element card bg-primary text-white mb-3 text-center">
+                    <div class="card-body">
+                      <blockquote class="card-blockquote">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Integer posuere erat a ante.</p>
+                        <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> cards -->
+
+          <div class="ht-tm-codeblock ht-tm-btn-replaceable ht-tm-element ht-tm-element-inner">
+            <form id="myForm" method="POST" action="{% url 'app:generate-view' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="prompt_message">What is your goal?</label>
+                <input name = "prompt_msg" type="text" class="form-control" id="prompt_message" placeholder="Eg: Become an IAS Officer">
+                <small id="promptHelp" class="form-text text-muted">Sample text</small>
+              </div>
+              <a href="#" class="ht-tm-element btn btn-outline-primary" onclick="submitForm()">Generate Roadmap</a>
+            </form>
+          </div>
+          <!-- popovers -->
+
+          <div class="ht-tm-cat">
+            <div class="ht-tm-codeblock mt-5" id="loading">
+              <div class="progress ht-tm-element">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+              </div>
+            </div>
+
+          </div> <!-- progress -->
+          <div class="ht-tm-codeblock mt-5">
+            {% if roadmap_title %}<h5 class="ht-tm-cat-title">{{roadmap_title}} Roadmap</h5>{% endif %}
+            <div class="container ht-tm-container tree">
+              {% if roadmap_html %}{{roadmap_html|safe}}{% endif %}
+            </div>
+          </div> <!-- tree -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tm-footer">
+    <a href="#" title="Bootstrap templates and themes" >
+      
+      <img src="#" alt="Our Logo" width="188">
+      
+    </a>
+  </div>
+</div>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+    function submitForm(){
+      document.getElementById('myForm').submit();
+    }
+    let roadmap_html = `{{ roadmap_html }}` != '' ? `{{ roadmap_html }}` : null;
+    window.addEventListener('beforeunload', function() {
+      document.getElementById("loading").style.display = "block";
+    });
+    window.addEventListener('unload', function() {
+      console.log('not loading',document.getElementById("loading").style.display);
+    });
+    document.getElementById("loading").style.display = "none";
+    
+</script>
+
+<script src="{% static 'app/asset/ajax/libs/clipboard.js/1.7.1/clipboard.min.js' %}"></script>
+  <div id="ht-nav-mobile-indicator"></div>
+</body>
+</html>
